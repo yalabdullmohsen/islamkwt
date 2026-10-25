@@ -1,0 +1,323 @@
+{
+ "asof": "الأربعاء ٢١ أكتوبر ٢٠٢٦ · ٤ م",
+ "rows": [
+  {
+   "group": "status",
+   "label": "total",
+   "n": 162,
+   "ord": 0
+  },
+  {
+   "group": "status",
+   "label": "studying",
+   "n": 123,
+   "ord": 1
+  },
+  {
+   "group": "status",
+   "label": "new",
+   "n": 0,
+   "ord": 2
+  },
+  {
+   "group": "day",
+   "label": "2026-10-13",
+   "n": 12,
+   "ord": 0
+  },
+  {
+   "group": "day",
+   "label": "2026-10-14",
+   "n": 17,
+   "ord": 1
+  },
+  {
+   "group": "day",
+   "label": "2026-10-15",
+   "n": 7,
+   "ord": 2
+  },
+  {
+   "group": "day",
+   "label": "2026-10-16",
+   "n": 3,
+   "ord": 3
+  },
+  {
+   "group": "day",
+   "label": "2026-10-17",
+   "n": 1,
+   "ord": 4
+  },
+  {
+   "group": "day",
+   "label": "2026-10-18",
+   "n": 26,
+   "ord": 5
+  },
+  {
+   "group": "day",
+   "label": "2026-10-19",
+   "n": 47,
+   "ord": 6
+  },
+  {
+   "group": "day",
+   "label": "2026-10-20",
+   "n": 31,
+   "ord": 7
+  },
+  {
+   "group": "day",
+   "label": "2026-10-21",
+   "n": 18,
+   "ord": 8
+  },
+  {
+   "group": "religion",
+   "label": "مسيحية",
+   "n": 82,
+   "ord": 0
+  },
+  {
+   "group": "religion",
+   "label": "هندوسية",
+   "n": 23,
+   "ord": 1
+  },
+  {
+   "group": "religion",
+   "label": "إسلام",
+   "n": 23,
+   "ord": 2
+  },
+  {
+   "group": "religion",
+   "label": "بوذية",
+   "n": 22,
+   "ord": 3
+  },
+  {
+   "group": "religion",
+   "label": "أخرى/غير محدد",
+   "n": 12,
+   "ord": 4
+  },
+  {
+   "group": "gender",
+   "label": "أنثى",
+   "n": 119,
+   "ord": 0
+  },
+  {
+   "group": "gender",
+   "label": "ذكر",
+   "n": 43,
+   "ord": 1
+  },
+  {
+   "group": "nationality",
+   "label": "الهند",
+   "n": 52,
+   "ord": 0
+  },
+  {
+   "group": "nationality",
+   "label": "الفلبين",
+   "n": 39,
+   "ord": 1
+  },
+  {
+   "group": "nationality",
+   "label": "سريلانكا",
+   "n": 36,
+   "ord": 2
+  },
+  {
+   "group": "nationality",
+   "label": "النيبال",
+   "n": 25,
+   "ord": 3
+  },
+  {
+   "group": "nationality",
+   "label": "إثيوبيا",
+   "n": 5,
+   "ord": 4
+  },
+  {
+   "group": "nationality",
+   "label": "بنجلاديش",
+   "n": 2,
+   "ord": 5
+  },
+  {
+   "group": "nationality",
+   "label": "إريتريا",
+   "n": 1,
+   "ord": 6
+  },
+  {
+   "group": "nationality",
+   "label": "أوكرانيا",
+   "n": 1,
+   "ord": 7
+  },
+  {
+   "group": "nationality",
+   "label": "بنين",
+   "n": 1,
+   "ord": 8
+  },
+  {
+   "group": "language",
+   "label": "الهندية",
+   "n": 38,
+   "ord": 0
+  },
+  {
+   "group": "language",
+   "label": "التاغالوغ",
+   "n": 36,
+   "ord": 1
+  },
+  {
+   "group": "language",
+   "label": "التاميلية",
+   "n": 21,
+   "ord": 2
+  },
+  {
+   "group": "language",
+   "label": "النيبالية",
+   "n": 17,
+   "ord": 3
+  },
+  {
+   "group": "language",
+   "label": "السنهالية",
+   "n": 14,
+   "ord": 4
+  },
+  {
+   "group": "language",
+   "label": "الإنجليزية",
+   "n": 12,
+   "ord": 5
+  },
+  {
+   "group": "language",
+   "label": "الأردية",
+   "n": 6,
+   "ord": 6
+  },
+  {
+   "group": "language",
+   "label": "البنغالية",
+   "n": 3,
+   "ord": 7
+  },
+  {
+   "group": "language",
+   "label": "الأمهرية",
+   "n": 2,
+   "ord": 8
+  },
+  {
+   "group": "language",
+   "label": "العربية",
+   "n": 2,
+   "ord": 9
+  },
+  {
+   "group": "language",
+   "label": "الروسية",
+   "n": 1,
+   "ord": 10
+  },
+  {
+   "group": "language",
+   "label": "المالايالامية",
+   "n": 1,
+   "ord": 11
+  },
+  {
+   "group": "language",
+   "label": "الأورومية",
+   "n": 1,
+   "ord": 12
+  },
+  {
+   "group": "language",
+   "label": "الفرنسية",
+   "n": 1,
+   "ord": 13
+  },
+  {
+   "group": "language",
+   "label": "التيلوغوية",
+   "n": 1,
+   "ord": 14
+  },
+  {
+   "group": "language",
+   "label": "غير محددة",
+   "n": 6,
+   "ord": 15
+  },
+  {
+   "group": "followup",
+   "label": "جارٍ التواصل",
+   "n": 28,
+   "ord": 0
+  },
+  {
+   "group": "followup",
+   "label": "لم يتم الرد",
+   "n": 34,
+   "ord": 1
+  },
+  {
+   "group": "followup",
+   "label": "غير راغب بالتعرف",
+   "n": 22,
+   "ord": 2
+  },
+  {
+   "group": "followup",
+   "label": "قيد التفكير",
+   "n": 13,
+   "ord": 3
+  },
+  {
+   "group": "followup",
+   "label": "بانتظار الكفيل",
+   "n": 6,
+   "ord": 4
+  },
+  {
+   "group": "followup",
+   "label": "طلب تعلّم لمسلم",
+   "n": 5,
+   "ord": 5
+  },
+  {
+   "group": "followup",
+   "label": "رغبة في الإشهار",
+   "n": 4,
+   "ord": 6
+  },
+  {
+   "group": "followup",
+   "label": "تم الإشهار",
+   "n": 1,
+   "ord": 7
+  },
+  {
+   "group": "status",
+   "label": "done",
+   "n": 39,
+   "ord": 3
+  }
+ ]
+}

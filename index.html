@@ -1,12 +1,113 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>علّمني الإسلام — إحصائيات الطلبات</title>
-<style>html,body{margin:0;height:100%;background:#fff}iframe{border:0;width:100%;height:100%;display:block}</style>
-</head>
-<body>
-<iframe src="https://yalabdullmohsen.github.io/sunnah-legal/counter/" title="علّمني الإسلام — إحصائيات الطلبات"></iframe>
-</body>
-</html>
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>عدّاد طلبات علمني الإسلام</title><style>
+:root{--font-anthropic-sans:"Segoe UI",Tahoma,"Noto Sans Arabic",system-ui,sans-serif;--font-anthropic-serif:"Segoe UI",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;--cds-font-size-caption:.85rem;--cds-font-size-heading:1.1rem;--cds-font-size-body:1rem;--cds-font-weight-medium:600}
+body{margin:0;background:#f4f8fb}@media (prefers-color-scheme:dark){body{background:#0d1b29}}
+.dash-skeleton{}
+
+#dash-root{--dash-gutter:max(14px,3vw)}
+.q{--c-ink:#12304a;--c-mute:#64788a;--c-card:#ffffff;--c-line:#e3ecf3;--c-track:#e8f1f7;--c-bg:#f4f8fb;
+ --c-g1:#0a5f86;--c-g2:#1597c9;--c-gold:#ffd166;--c-teal:#1fb5c9;--c-blue:#1e73be;--c-orange:#f08a3c;--c-amber:#f2b134;--c-gray:#8fa3b3;--c-pink:#e05d9a;--c-indigo:#5b7cfa;
+ max-width:1100px;margin-inline:auto;font-family:var(--font-anthropic-sans);display:flex;flex-direction:column;gap:14px;color:var(--c-ink);background:var(--c-bg);border-radius:22px;padding:clamp(12px,3vw,24px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .q{--c-ink:#e8f2f8;--c-mute:#9db5c6;--c-card:#13273a;--c-line:#223a50;--c-track:#1e3449;--c-bg:#0d1b29;--c-g1:#0a4a6b;--c-g2:#2aa9dc;--c-gold:#ffd166;--c-teal:#3cc9db;--c-blue:#5aa2e8;--c-orange:#f59a52;--c-amber:#f5c04e;--c-gray:#8fa3b3;--c-pink:#ee77ab;--c-indigo:#8aa2ff}}
+:root[data-theme="dark"] .q{--c-ink:#e8f2f8;--c-mute:#9db5c6;--c-card:#13273a;--c-line:#223a50;--c-track:#1e3449;--c-bg:#0d1b29;--c-g1:#0a4a6b;--c-g2:#2aa9dc;--c-gold:#ffd166;--c-teal:#3cc9db;--c-blue:#5aa2e8;--c-orange:#f59a52;--c-amber:#f5c04e;--c-gray:#8fa3b3;--c-pink:#ee77ab;--c-indigo:#8aa2ff}
+.q *{box-sizing:border-box}
+.q header{padding:6px 4px 2px}
+.q h1{font-family:var(--font-anthropic-serif);font-weight:400;font-size:clamp(1.55rem,5vw,2.2rem);margin:0;line-height:1.3}
+.q .sub{color:var(--c-mute);font-size:var(--cds-font-size-caption);margin:6px 0 0;line-height:1.7}
+.q .card{background:var(--c-card);border:1px solid var(--c-line);border-radius:18px;padding:clamp(14px,3vw,22px);min-width:0;box-shadow:0 2px 10px #0a5f860f}
+.q h2{display:flex;align-items:center;gap:8px;font-size:var(--cds-font-size-heading);font-weight:var(--cds-font-weight-medium);margin:0 0 2px}
+.q h2 i{width:10px;height:10px;border-radius:50%;flex:none}
+.q .note{color:var(--c-mute);font-size:var(--cds-font-size-caption);margin:0 0 14px}
+.q .hero{position:relative;overflow:hidden;border:0;color:#fff;text-align:center;display:flex;flex-direction:column;align-items:center;gap:4px;padding:clamp(24px,6vw,44px) 16px;background:linear-gradient(135deg,var(--c-g2) 0%,var(--c-g1) 100%)}
+.q .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 12% 120%,#ffffff22 0 22%,transparent 23%),radial-gradient(circle at 92% -10%,#ffffff1c 0 18%,transparent 19%);pointer-events:none}
+.q .hero>*{position:relative}
+.q .hero .lbl{font-size:var(--cds-font-size-heading);opacity:.9}
+.q .big{font-family:var(--font-anthropic-serif);font-weight:400;font-size:clamp(5rem,26vw,9.5rem);line-height:1.05;font-variant-numeric:tabular-nums;direction:ltr;color:#fff;min-height:1em}
+.q .hero .sub{color:#ffffffbf}
+.q .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,10rem),1fr));gap:14px}
+.q .tile{display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center}
+.q .tile b{font-family:var(--font-anthropic-serif);font-weight:400;font-size:2.8rem;line-height:1.1;font-variant-numeric:tabular-nums;direction:ltr}
+.q .tile span{color:var(--c-mute);font-size:var(--cds-font-size-caption)}
+.q .t-ok b{color:var(--c-blue)}.q .t-new b{color:var(--c-orange)}
+.q .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,21rem),1fr));gap:14px}
+.q .days{display:flex;align-items:flex-end;gap:8px;height:220px;direction:rtl}
+.q .col{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;gap:5px}
+.q .col .v{font-weight:var(--cds-font-weight-medium);font-variant-numeric:tabular-nums}
+.q .col .b{width:100%;max-width:38px;border-radius:10px 10px 4px 4px;background:var(--c-g2);opacity:.85}
+.q .col.top .b{background:var(--c-gold);opacity:1}
+.q .col .d{font-size:11px;color:var(--c-mute);text-align:center;line-height:1.35;min-height:2.7em}
+.q .row{display:grid;grid-template-columns:minmax(4.2rem,7.2rem) 1fr 2.2rem;align-items:center;gap:10px;margin:9px 0;font-size:var(--cds-font-size-body)}
+.q .row .t{height:14px;background:var(--c-track);border-radius:7px;overflow:hidden;direction:ltr}
+.q .row .f{height:100%;border-radius:7px}
+.q .row .n{font-variant-numeric:tabular-nums;font-weight:var(--cds-font-weight-medium);direction:ltr;text-align:left}
+.q .wide{grid-column:1/-1}
+.q .foot{color:var(--c-mute);font-size:var(--cds-font-size-caption);text-align:center;padding:4px 0 2px}
+</style></head><body>
+<div class="q" dir="rtl">
+ <header><h1>عدّاد طلبات «علمني الإسلام»</h1><p class="sub">وزارة الشؤون الإسلامية | إدارة العلاقات الخارجية | مراقبة الجاليات والتعريف بالإسلام | قسم التعريف بالإسلام · بيانات مجمّعة بلا أسماء</p></header>
+ <div class="card hero"><span class="lbl">إجمالي الطلبات الواردة</span><span class="big dash-skeleton" id="big">0</span><span class="sub" id="asof">آخر تحديث: الأربعاء ٢١ أكتوبر ٢٠٢٦ · ١١ ص</span></div>
+ <div class="tiles">
+  <div class="card tile t-ok"><b id="t1">—</b><span>جاري الدراسة</span></div>
+  <div class="card tile t-ok"><b id="t3">—</b><span>تم الإنجاز</span></div>
+  <div class="card tile t-new"><b id="t2">—</b><span>طلبات جديدة لم تُحوَّل بعد</span></div>
+ </div>
+ <div class="card"><h2><i style="background:var(--c-teal)"></i>الطلبات حسب اليوم</h2><p class="note" id="dnote">من ١٣ إلى ٢١ أكتوبر ٢٠٢٦ · اليوم الأعلى بالأصفر</p><div class="days dash-skeleton" id="days"></div></div>
+ <div class="grid">
+  <div class="card"><h2><i style="background:var(--c-blue)"></i>الديانة</h2><p class="note">كما كتبها المتقدم</p><div id="religion"></div></div>
+  <div class="card"><h2><i style="background:var(--c-g2)"></i>الجنسية</h2><p class="note">عدد الطلبات لكل جنسية</p><div id="nationality"></div></div>
+  <div class="card"><h2><i style="background:var(--c-indigo)"></i>اللغة المفضّلة</h2><p class="note">اللغة الأولى، وإن لم تُحدَّد فالثانية</p><div id="language"></div></div>
+  <div class="card"><h2><i style="background:var(--c-pink)"></i>الجنس</h2><p class="note">عدد الطلبات</p><div id="gender"></div></div>
+  <div class="card wide"><h2><i style="background:var(--c-orange)"></i>نتائج المتابعة</h2><p class="note" id="fnote">حالات المتابعة مع المستفيدين · أعداد فقط</p><div id="followup"></div></div>
+ </div>
+</div>
+<script>
+(function(){
+const wd=d=>new Date(d+'T00:00:00Z').toLocaleDateString('ar-u-nu-latn',{weekday:'long',day:'numeric',timeZone:'UTC'});
+const V=n=>'var(--c-'+n+')';
+const COL={religion:{'مسيحية':V('blue'),'إسلام':V('g2'),'هندوسية':V('orange'),'بوذية':V('amber'),'أخرى/غير محدد':V('gray')},gender:{'أنثى':V('pink'),'ذكر':V('blue')},followup:{'جارٍ التواصل':V('blue'),'لم يتم الرد':V('orange'),'غير راغب بالتعرف':V('pink'),'قيد التفكير':V('indigo'),'طلب تعلّم لمسلم':V('teal'),'بانتظار الكفيل':V('amber'),'رغبة في الإشهار':V('g2'),'تم الإشهار':V('g1'),'طلب تجريبي':V('gray'),'لم يتم التواصل':V('gray')}};
+const FALL={nationality:[V('g2'),V('teal')],language:[V('indigo'),V('blue')]};
+let animated=false;
+let first=true;
+function countUp(el,to,dur){
+  el._to=to;
+  if(!first||window.matchMedia('(prefers-reduced-motion: reduce)').matches||to<1){el.textContent=String(to);return;}
+  dur=dur||1400;const t0=performance.now();el.textContent='0';
+  (function step(t){const p=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-p,3);el.textContent=String(Math.round(el._to*e));if(p<1)requestAnimationFrame(step);else el.textContent=String(el._to);})(t0);
+}
+function hbar(id,rows,max){
+  const box=document.getElementById(id);box.replaceChildren();
+  rows.forEach((r,i)=>{const row=document.createElement('div');row.className='row';
+    const l=document.createElement('span');l.textContent=r.label;
+    const t=document.createElement('div');t.className='t';const f=document.createElement('div');f.className='f';if(first){f.style.width='0%';f.style.transition='width 1.4s cubic-bezier(.2,.7,.2,1)';requestAnimationFrame(()=>requestAnimationFrame(()=>{f.style.width=(r.n/max*100)+'%'}))}else f.style.width=(r.n/max*100)+'%';
+    f.style.background=(COL[id]&&COL[id][r.label])||FALL[id][i<3?0:1];t.appendChild(f);
+    const n=document.createElement('span');n.className='n';countUp(n,r.n);
+    row.append(l,t,n);box.appendChild(row);});
+}
+function render(rows){
+  {
+    const by=g=>rows.filter(x=>x.group===g).sort((a,b)=>a.ord-b.ord),one=(g,l)=>(rows.find(x=>x.group===g&&x.label===l)||{n:0}).n;
+    const big=document.getElementById('big');big.classList.remove('dash-skeleton');countUp(big,one('status','total'));
+    countUp(document.getElementById('t1'),one('status','studying'));
+    countUp(document.getElementById('t2'),one('status','new'));countUp(document.getElementById('t3'),one('status','done'));
+    const days=by('day'),mx=Math.max(...days.map(x=>x.n),1);if(days.length){const f=d=>new Date(d+'T00:00:00Z').toLocaleDateString('ar-u-nu-arab',{day:'numeric',timeZone:'UTC'}),mo=new Date(days[days.length-1].label+'T00:00:00Z').toLocaleDateString('ar',{month:'long',year:'numeric',timeZone:'UTC'});document.getElementById('dnote').textContent='من '+f(days[0].label)+' إلى '+f(days[days.length-1].label)+' '+mo+' · اليوم الأعلى بالأصفر';}
+    const dEl=document.getElementById('days');dEl.classList.remove('dash-skeleton');dEl.replaceChildren();
+    days.forEach(x=>{const c=document.createElement('div');c.className='col'+(x.n===mx?' top':'');
+      const v=document.createElement('span');v.className='v';countUp(v,x.n);
+      const b=document.createElement('div');b.className='b';if(first){b.style.height='4px';b.style.transition='height 1.4s cubic-bezier(.2,.7,.2,1)';requestAnimationFrame(()=>requestAnimationFrame(()=>{b.style.height=Math.max(4,x.n/mx*150)+'px'}))}else b.style.height=Math.max(4,x.n/mx*150)+'px';
+      const d=document.createElement('span');d.className='d';d.textContent=wd(x.label);
+      c.append(v,b,d);dEl.appendChild(c);});
+    ['religion','nationality','language','gender','followup'].forEach(g=>{const a=by(g);if(!a.length)return;if(g==='followup'){const s=a.reduce((t,x)=>t+x.n,0),tot=one('status','total');document.getElementById('fnote').textContent='حالات المتابعة مع المستفيدين ('+s+' حالة) · أعداد فقط';if(tot>s)a.push({label:'لم يتم التواصل',n:tot-s});}hbar(g,a,Math.max(...a.map(x=>x.n),1));});
+  }
+}
+const SB='https://nybuospfwbbtejvjivhd.supabase.co',AK='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im55YnVvc3Bmd2JidGVqdmppdmhkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIzNTM2NzUsImV4cCI6MjEwNzkyOTY3NX0.raSv5v4repFqwam7C7l0d5mWABVH44REq_oRfDYzgF4';
+function load(){
+ const base=fetch('stats.json?'+Date.now()).then(r=>r.json());
+ const live=fetch(SB+'/rest/v1/rpc/counter_rows',{method:'POST',headers:{apikey:AK,authorization:'Bearer '+AK,'content-type':'application/json'},body:'{}'}).then(r=>r.json()).catch(()=>null);
+ Promise.all([base,live]).then(([j,l])=>{
+  const ok=Array.isArray(l)&&((l.find(x=>x.group==='status'&&x.label==='total')||{}).n>0);
+  const rows=ok?l.concat(j.rows.filter(x=>x.group==='followup')):j.rows;
+  render(rows);first=false;
+  document.getElementById('asof').textContent=ok?'آخر تحديث: '+new Date().toLocaleString('ar-KW',{weekday:'long',day:'numeric',month:'long',hour:'numeric',hour12:true,timeZone:'Asia/Kuwait'}):(j.asof||'');
+ }).catch(()=>{});}
+load();document.addEventListener('visibilitychange',()=>{if(!document.hidden)load()});
+})();
+</script></body></html>

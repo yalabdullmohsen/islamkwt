@@ -23,7 +23,7 @@ let cache={};try{cache=JSON.parse(localStorage.getItem('wq_cache')||'{}')}catch(
 const rows=g.dataSource.data().toJSON().filter(x=>!EXCL.includes(x.requestServiceId));
 const parse=async n=>{const buf=await(await fetch('/RequestedServices/GetFile?serviceId=54&requestServiceId='+n)).arrayBuffer();const doc=await pdfjsLib.getDocument({data:new Uint8Array(buf)}).promise;let it=[];for(let p=1;p<=doc.numPages;p++){const t=await doc.getPage(p).then(x=>x.getTextContent());it.push(...t.items.map(i=>i.str.normalize('NFKC').trim()).filter(Boolean))}const a=it.indexOf('اللغة المفضلة الثانية'),b=it.findIndex(x=>x.startsWith('رقم هاتف آخر'));const m=(a>=0&&b>a)?it.slice(a+1,b):[];return{religion:rel(m[1]),gender:it.find(x=>x==='ذكر'||x==='أنثى')||null,nationality:nat(m[0]),lang:lang(m[2],m[3])}};
 let fresh=0;for(const r of rows){const n=r.requestServiceId;if(!cache[n]){try{cache[n]=await parse(n);fresh++;localStorage.setItem('wq_cache',JSON.stringify(cache))}catch(e){}}}
-const HOLD=[196];
+const HOLD=[];
 const docs=rows.filter(r=>cache[r.requestServiceId]).map(r=>({id:r.requestServiceId,status:(HOLD.includes(r.requestServiceId)?0:r.statusId),day:String(r.createdDate).slice(0,10),...cache[r.requestServiceId]}));
 const res=await fetch(EP,{method:'POST',headers:{'content-type':'application/json','x-key':KEY},body:JSON.stringify({docs,exclude:EXCL})});
 return'sent '+docs.length+' fresh '+fresh+' '+res.status;

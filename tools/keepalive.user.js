@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         إبقاء الجلسة — بوابة الأوقاف ووثيقة
 // @namespace    islamkwt
-// @version      1
+// @version      2
 // @description  يبقي جلسة بوابة الخدمات الإلكترونية ووثيقة مفتوحة (نبضة كل 3 دقائق) ويضغط «تسجيل الدخول» إن عبّأ المتصفح بياناتك المحفوظة. لا يحفظ أي كلمة سر.
 // @match        https://eservices-cp.awqaf.gov.kw/*
 // @match        https://watheqa.awqaf.gov.kw/*
@@ -13,7 +13,7 @@
 (function(){
   'use strict';
   const PING_MS = 3*60*1000;      // نبضة كل 3 دقائق
-  const RELOAD_MS = 25*60*1000;   // تحديث الصفحة كل 25 دقيقة (يجدد الجلسة والرموز)
+  const RELOAD_MS = 60*60*1000;   // تحديث الصفحة كل ساعة (يجدد الجلسة والرموز ويحدّث العدّاد)
   const isLogin = () => !!document.querySelector('input[type=password]');
 
   // 1) نبضة: طلب خفيف لنفس الصفحة بكوكيز الجلسة + حركة وهمية للفأرة

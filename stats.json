@@ -268,13 +268,13 @@
   {
    "group": "followup",
    "label": "جارٍ التواصل",
-   "n": 32,
+   "n": 33,
    "ord": 0
   },
   {
    "group": "followup",
    "label": "لم يتم الرد",
-   "n": 37,
+   "n": 38,
    "ord": 1
   },
   {
@@ -292,25 +292,25 @@
   {
    "group": "followup",
    "label": "بانتظار الكفيل",
-   "n": 6,
+   "n": 7,
    "ord": 4
   },
   {
    "group": "followup",
    "label": "طلب تعلّم لمسلم",
-   "n": 6,
+   "n": 7,
    "ord": 5
   },
   {
    "group": "followup",
    "label": "رغبة في الإشهار",
-   "n": 8,
+   "n": 7,
    "ord": 6
   },
   {
    "group": "followup",
    "label": "تم الإشهار",
-   "n": 2,
+   "n": 3,
    "ord": 7
   },
   {

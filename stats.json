@@ -268,37 +268,37 @@
   {
    "group": "followup",
    "label": "جارٍ التواصل",
-   "n": 37,
+   "n": 38,
    "ord": 0
   },
   {
    "group": "followup",
    "label": "لم يتم الرد",
-   "n": 39,
+   "n": 40,
    "ord": 1
   },
   {
    "group": "followup",
    "label": "غير راغب بالتعرف",
-   "n": 23,
+   "n": 24,
    "ord": 2
   },
   {
    "group": "followup",
    "label": "قيد التفكير",
-   "n": 16,
+   "n": 19,
    "ord": 3
   },
   {
    "group": "followup",
    "label": "بانتظار الكفيل",
-   "n": 7,
+   "n": 9,
    "ord": 4
   },
   {
    "group": "followup",
    "label": "طلب تعلّم لمسلم",
-   "n": 7,
+   "n": 8,
    "ord": 5
   },
   {

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         عدّاد علمني الإسلام
 // @namespace    wq-counter
-// @version      3
+// @version      4
 // @updateURL    https://islamkwt.com/tools/wqcounter.user.js
 // @downloadURL  https://islamkwt.com/tools/wqcounter.user.js
 // @match        https://eservices-cp.awqaf.gov.kw/RequestedServices/ReceivedForms*
@@ -9,7 +9,7 @@
 // @run-at       document-idle
 // ==/UserScript==
 const __run=()=>(async()=>{
-const EP='https://nybuospfwbbtejvjivhd.supabase.co/functions/v1/counter-ingest',KEY='353f5968f8e3a988be42f1b940e0ea0a5eeb856b',EXCL=[2];
+const EP='https://nybuospfwbbtejvjivhd.supabase.co/functions/v1/counter-ingest',KEY='353f5968f8e3a988be42f1b940e0ea0a5eeb856b',EXCL=[2,220];
 const ld=u=>new Promise((res,rej)=>{if(document.querySelector('script[src="'+u+'"]'))return res();const s=document.createElement('script');s.src=u;s.onload=res;s.onerror=rej;document.head.appendChild(s)});
 const rel=t=>{t=(t||'').toLowerCase();if(/غير\s*مسلم|كاف[ر]/.test(t))return'أخرى/غير محدد';const h=[];if(/مسيح|مسح|نصران|christ|catholic|كاثول|كرست/.test(t))h.push('مسيحية');if(/مسلم|اسلم|إسلام|اسلام|islam|muslim/.test(t))h.push('إسلام');if(/هندو|هنود|hindu|اندو/.test(t))h.push('هندوسية');if(/بوذ|buddh/.test(t))h.push('بوذية');return h.length===1?h[0]:'أخرى/غير محدد'};
 const nat=t=>{t=t||'';if(/فل[يى]بين|فلبين|phil/i.test(t))return'الفلبين';if(/نيبال|nepal/i.test(t))return'النيبال';if(/سيلان|سريلانك|sri/i.test(t))return'سريلانكا';if(/بنج?لاديش|بنغلاديش|bangla/i.test(t))return'بنجلاديش';if(/[إأا]ثيوب|ethiop/i.test(t))return'إثيوبيا';if(/[إأا]ر[يت]+ر|eritr/i.test(t))return'إريتريا';if(/أوكران|اوكران|ukrain/i.test(t))return'أوكرانيا';if(/بنين|benin/i.test(t))return'بنين';if(/هند|india/i.test(t))return'الهند';return t||'غير محدد'};

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         عدّاد علمني الإسلام
 // @namespace    wq-counter
-// @version      5
+// @version      6
 // @updateURL    https://islamkwt.com/tools/wqcounter.user.js
 // @downloadURL  https://islamkwt.com/tools/wqcounter.user.js
 // @match        https://eservices-cp.awqaf.gov.kw/RequestedServices/ReceivedForms*
@@ -30,8 +30,9 @@ const res=await fetch(EP,{method:'POST',headers:{'content-type':'application/jso
 const IPC='https://nybuospfwbbtejvjivhd.supabase.co/functions/v1/ipc-forward',IPC_FROM=235;
 let isent=[];try{isent=JSON.parse(localStorage.getItem('wq_ipc_sent')||'[]')}catch(e){}
 const ph=x=>{const d=String(x||'').replace(/[^\d+]/g,'');if(!d)return undefined;if(/^\d{8}$/.test(d))return'+965'+d;return d};
+const dg=x=>String(x||'').replace(/[٠-٩]/g,c=>c.charCodeAt(0)-1632).replace(/[۰-۹]/g,c=>c.charCodeAt(0)-1776);
 const isTel=x=>/^\+?\d{7,11}$/.test(String(x||'').replace(/\s/g,''));
-const seeker=async n=>{const buf=await(await fetch('/RequestedServices/GetFile?serviceId=54&requestServiceId='+n)).arrayBuffer();const doc=await pdfjsLib.getDocument({data:new Uint8Array(buf)}).promise;let it=[];for(let p=1;p<=doc.numPages;p++){const t=await doc.getPage(p).then(x=>x.getTextContent());it.push(...t.items.map(i=>i.str.normalize('NFKC').trim()).filter(Boolean))}
+const seeker=async n=>{const buf=await(await fetch('/RequestedServices/GetFile?serviceId=54&requestServiceId='+n)).arrayBuffer();const doc=await pdfjsLib.getDocument({data:new Uint8Array(buf)}).promise;let it=[];for(let p=1;p<=doc.numPages;p++){const t=await doc.getPage(p).then(x=>x.getTextContent());it.push(...t.items.map(i=>dg(i.str.normalize('NFKC').trim())).filter(Boolean))}
  const k=it.indexOf('مكفول مقدم الطلب');if(k<0)return null;const top=it.slice(0,k),S=it.slice(k);
  const b=S.findIndex(x=>x.startsWith('رقم هاتف آخر')),a=S.indexOf('اللغة المفضلة الثانية');const m=(a>=0&&b>a)?S.slice(a+1,b):[];
  const tels=(b>0?S.slice(0,b):S).filter(isTel),alt=b>=0?S.slice(b+1).find(isTel):undefined;

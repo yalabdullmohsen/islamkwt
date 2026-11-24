@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         عدّاد علمني الإسلام
 // @namespace    wq-counter
-// @version      4
+// @version      5
 // @updateURL    https://islamkwt.com/tools/wqcounter.user.js
 // @downloadURL  https://islamkwt.com/tools/wqcounter.user.js
 // @match        https://eservices-cp.awqaf.gov.kw/RequestedServices/ReceivedForms*
@@ -26,7 +26,26 @@ let fresh=0;for(const r of rows){const n=r.requestServiceId;if(!cache[n]){try{ca
 const HOLD=[];
 const docs=rows.filter(r=>cache[r.requestServiceId]).map(r=>({id:r.requestServiceId,status:(HOLD.includes(r.requestServiceId)?0:r.statusId),day:String(r.createdDate).slice(0,10),...cache[r.requestServiceId]}));
 const res=await fetch(EP,{method:'POST',headers:{'content-type':'application/json','x-key':KEY},body:JSON.stringify({docs,exclude:EXCL})});
-return'sent '+docs.length+' fresh '+fresh+' '+res.status;
+// ربط لجنة التعريف بالإسلام (ipcsystem): كل طلب جديد يُحوَّل آليًا عبر دالة آمنة (المفتاح السري على الخادم فقط)
+const IPC='https://nybuospfwbbtejvjivhd.supabase.co/functions/v1/ipc-forward',IPC_FROM=235;
+let isent=[];try{isent=JSON.parse(localStorage.getItem('wq_ipc_sent')||'[]')}catch(e){}
+const ph=x=>{const d=String(x||'').replace(/[^\d+]/g,'');if(!d)return undefined;if(/^\d{8}$/.test(d))return'+965'+d;return d};
+const isTel=x=>/^\+?\d{7,11}$/.test(String(x||'').replace(/\s/g,''));
+const seeker=async n=>{const buf=await(await fetch('/RequestedServices/GetFile?serviceId=54&requestServiceId='+n)).arrayBuffer();const doc=await pdfjsLib.getDocument({data:new Uint8Array(buf)}).promise;let it=[];for(let p=1;p<=doc.numPages;p++){const t=await doc.getPage(p).then(x=>x.getTextContent());it.push(...t.items.map(i=>i.str.normalize('NFKC').trim()).filter(Boolean))}
+ const k=it.indexOf('مكفول مقدم الطلب');if(k<0)return null;const top=it.slice(0,k),S=it.slice(k);
+ const b=S.findIndex(x=>x.startsWith('رقم هاتف آخر')),a=S.indexOf('اللغة المفضلة الثانية');const m=(a>=0&&b>a)?S.slice(a+1,b):[];
+ const tels=(b>0?S.slice(0,b):S).filter(isTel),alt=b>=0?S.slice(b+1).find(isTel):undefined;
+ const l1=(m[2]||'').trim(),l2=(m[3]||'').trim();
+ const tel=ph(tels[0]||alt),wa=ph(alt);
+ return{id:n,name:S[S.indexOf('الاسم')+1],tel,whatsapp:wa&&wa!==tel?wa:undefined,gender:S.find(x=>x==='ذكر'||x==='أنثى'),country:m[0],religion:m[1],language:(l1&&l1.toLowerCase()!=='other')?l1:(l2||undefined),language2:(l1&&l1.toLowerCase()!=='other')?(l2||undefined):undefined,sponsor_name:top[top.indexOf('الاسم')+1],sponsor_tel:ph(top.filter(isTel).find(x=>!/^\d{1,6}$/.test(x)))}};
+const todo=rows.map(r=>r.requestServiceId).filter(n=>n>=IPC_FROM&&!isent.includes(n)).sort((x,y)=>x-y);
+let ipcOut='';
+for(let i=0;i<Math.max(todo.length,1);i+=20){const seekers=[];for(const n of todo.slice(i,i+20)){try{const s=await seeker(n);if(s)seekers.push(s)}catch(e){}}
+ try{const r2=await fetch(IPC,{method:'POST',headers:{'content-type':'application/json','x-key':KEY},body:JSON.stringify({seekers})});const o=await r2.json();
+  for(const x of (o.results||[]))if(x.http===202||x.http===409)isent.push(x.id);
+  for(const sk of seekers)if(!(o.results||[]).some(x=>x.id===sk.id))isent.push(sk.id); // سبق إرساله على الخادم
+  localStorage.setItem('wq_ipc_sent',JSON.stringify([...new Set(isent)]));ipcOut+=' ipc '+JSON.stringify(o.results||[]);}catch(e){ipcOut+=' ipcerr'}}
+return'sent '+docs.length+' fresh '+fresh+' '+res.status+ipcOut;
 })();
 let __t;const __go=(d)=>{clearTimeout(__t);__t=setTimeout(()=>__run().catch(()=>{}),d)};
 __go(4000);

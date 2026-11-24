@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         عدّاد علمني الإسلام
 // @namespace    wq-counter
-// @version      6
+// @version      7
 // @updateURL    https://islamkwt.com/tools/wqcounter.user.js
 // @downloadURL  https://islamkwt.com/tools/wqcounter.user.js
 // @match        https://eservices-cp.awqaf.gov.kw/RequestedServices/ReceivedForms*
@@ -27,7 +27,7 @@ const HOLD=[];
 const docs=rows.filter(r=>cache[r.requestServiceId]).map(r=>({id:r.requestServiceId,status:(HOLD.includes(r.requestServiceId)?0:r.statusId),day:String(r.createdDate).slice(0,10),...cache[r.requestServiceId]}));
 const res=await fetch(EP,{method:'POST',headers:{'content-type':'application/json','x-key':KEY},body:JSON.stringify({docs,exclude:EXCL})});
 // ربط لجنة التعريف بالإسلام (ipcsystem): كل طلب جديد يُحوَّل آليًا عبر دالة آمنة (المفتاح السري على الخادم فقط)
-const IPC='https://nybuospfwbbtejvjivhd.supabase.co/functions/v1/ipc-forward',IPC_FROM=235;
+const IPC='https://nybuospfwbbtejvjivhd.supabase.co/functions/v1/ipc-forward',IPC_FROM=232;
 let isent=[];try{isent=JSON.parse(localStorage.getItem('wq_ipc_sent')||'[]')}catch(e){}
 const ph=x=>{const d=String(x||'').replace(/[^\d+]/g,'');if(!d)return undefined;if(/^\d{8}$/.test(d))return'+965'+d;return d};
 const dg=x=>String(x||'').replace(/[٠-٩]/g,c=>c.charCodeAt(0)-1632).replace(/[۰-۹]/g,c=>c.charCodeAt(0)-1776);
